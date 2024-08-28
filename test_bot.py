@@ -30,6 +30,7 @@ class UserState(StatesGroup):
 
 @dp.callback_query_handler(text='calories')
 async def set_age(call):
+    print("Кнопка 'Рассчитать норму калорий' нажата")
     await call.message.answer('Введи свой возраст.')
     await call.answer()
     await UserState.age.set()
